@@ -6,6 +6,7 @@ object Plugins {
     const val ANDROID_GRADLE_PLUGIN = "com.android.tools.build:gradle:7.2.2"
     const val HILT_AGP = "com.google.dagger:hilt-android-gradle-plugin:2.42"
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0"
+    const val GOOGLE_SERVICE = "com.google.gms:google-services:4.3.15"
 }
 
 object Dependency {
@@ -13,6 +14,8 @@ object Dependency {
         const val APP_COMPAT = "androidx.appcompat:appcompat:1.5.1"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:2.1.4"
         const val MATERIAL = "com.google.android.material:material:1.6.1"
+        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.4.0"
+        const val FRAGMENT_KTX = "androidx.fragment:fragment-ktx:1.3.3"
     }
 
     object KTX {
@@ -22,7 +25,6 @@ object Dependency {
     object Compose {
         private const val VERSION = "1.2.0"
         const val ACTIVITY_COMPOSE = "androidx.activity:activity-compose:1.5.0"
-        const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.4.0"
 
         const val MATERIAL = "androidx.compose.material:material:$VERSION"
         const val PREVIEW = "androidx.compose.ui:ui-tooling-preview:$VERSION"
@@ -31,6 +33,11 @@ object Dependency {
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling:$VERSION"
         const val COMPOSE_CONSTRAINT = "androidx.constraintlayout:constraintlayout-compose:1.0.1"
         const val NAVIGATION = "androidx.navigation:navigation-compose:2.5.1"
+    }
+
+    object Firebase {
+        const val FIREBASE_BOM = "com.google.firebase:firebase-bom:31.2.3"
+        const val REALTIME_DATABASE = "com.google.firebase:firebase-database-ktx"
     }
 
     object Lifecycle {
@@ -55,15 +62,15 @@ object Dependency {
     object OkHttp {
         const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:4.10.0"
     }
-
     object Retrofit {
         private const val VERSION = "2.9.0"
         const val RETROFIT = "com.squareup.retrofit2:retrofit:$VERSION"
         const val GSON_CONVERTER = "com.squareup.retrofit2:converter-gson:$VERSION"
     }
 
-    object Timber {
+    object Etc {
         const val TIMBER = "com.jakewharton.timber:timber:5.0.1"
+        const val GSON = "com.google.code.gson:gson:2.8.9"
     }
 
     object Test {

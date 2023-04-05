@@ -3,13 +3,14 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
     compileSdk = 32
 
     defaultConfig {
-        applicationId = "com.example.base"
+        applicationId = "android.chat.example"
         minSdk = 21
         targetSdk = 32
         versionCode = 1
@@ -19,12 +20,12 @@ android {
     }
 
     buildTypes {
-        getByName("debug") {
+        debug {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
 
-        getByName("release") {
+        release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
@@ -52,6 +53,12 @@ dependencies {
     implementation(Dependency.AndroidX.APP_COMPAT)
     implementation(Dependency.AndroidX.MATERIAL)
     implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
+    implementation(Dependency.AndroidX.ACTIVITY_KTX)
+    implementation(Dependency.AndroidX.FRAGMENT_KTX)
+
+    //Firebase
+    implementation(platform(Dependency.Firebase.FIREBASE_BOM))
+    implementation(Dependency.Firebase.REALTIME_DATABASE)
 
     //KTX
     implementation(Dependency.KTX.CORE)
@@ -75,8 +82,10 @@ dependencies {
     implementation(Dependency.Retrofit.GSON_CONVERTER)
     implementation(Dependency.OkHttp.LOGGING_INTERCEPTOR)
 
-    // Timber
-    implementation(Dependency.Timber.TIMBER)
+    // ETC
+    implementation(Dependency.Etc.TIMBER)
+    implementation(Dependency.Etc.GSON)
+
 
     //TEST
     testImplementation(Dependency.Test.JUNIT)
